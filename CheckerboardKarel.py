@@ -21,30 +21,30 @@ def main():
     2,2 4,2 6,2 ... etc has beepers
 
     """
-
-    fillstreetwithoddnumber()
-
-def fillstreetwithoddnumber():
-    while front_is_clear():
+    put_beeper()
+    while True:
+        for i in range(2):
+            custom_move()
         put_beeper()
+
+
+def custom_move():
+    if front_is_clear():
         move()
-        put_beeper()
+    else:
+        if facing_east():
+            turn_left()
+            move()
+            turn_left()
+        else:
+            turn_right()
+            move()
+            turn_right()
 
 
-
-
-def put_beeper2():
-    put_beeper()
-    put_beeper()
-
-
-
-def turn_around():
-    for i in range(2):
+def turn_right():
+    for i in range(3):
         turn_left()
-
-
-
 
 # DO NOT EDIT CODE BELOW THIS LINE #
 
